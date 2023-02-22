@@ -1,0 +1,8 @@
+torch
+torchvision
+Pillow
+gunicorn
+fastapi==0.61.1
+uvicorn==0.11.8
+python-multipart
+requests==2.24.0
