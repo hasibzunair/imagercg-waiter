@@ -1,6 +1,8 @@
 # Image Recognition Waiter
 
-This application deploys a deep learning image classification model as an API endpoint that recognizes what object is present in an image. It accepts images from the user, call the endpoint that makes a prediction, and shows results in a frontend UI. It demonstrates use-cases of different tools such as `PyTorch`, `FastAPI`, `Gradio` and `Docker`.
+This application deploys a deep learning image classification model that recognizes what object is present in an image. It accepts images from the user, makes request to an API endpoint that makes a prediction, and shows results in a frontend UI. 
+
+It demonstrates use-cases of different tools such as `PyTorch`, `FastAPI`, `Gradio` and `Docker`.
 
 <p align="left">
   <a href="#"><img src="./frontend/test1.jpeg" width="200"></a> <br />
