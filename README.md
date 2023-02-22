@@ -15,14 +15,15 @@ It demonstrates use-cases of different tools such as `PyTorch`, `FastAPI`, `Grad
 ### Usage
 To launch the application, run:
 ```
-# run backend and frontend docker containers
-sh deploy_app.sh
+git clone https://github.com/hasibzunair/imagercg-waiter
+cd imagercg-waiter/backend
+sh deploy.sh
 ```
 
 The app is live in `http://0.0.0.0:7860`. Upload images to make a prediction, or simply use the examples! For details on how the `frontend` and `backend` components were built, see respective folders. 
 
 ### Note
-I did this small project after completing [Docker for the Absolute Beginner - Hands On - DevOps](https://www.udemy.com/course/learn-docker/).
+I did this project after completing [Docker for the Absolute Beginner - Hands On - DevOps](https://www.udemy.com/course/learn-docker/).
 
 #### Todos
 * Google cloud run for backend
