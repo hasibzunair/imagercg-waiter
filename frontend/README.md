@@ -1,5 +1,5 @@
 # Gradio Frontend
-Drop in your images to see model predictions in a gradio frontend app.
+Upload in your images to see the predictions made by the model in a web interface.
 
 ### Local development
 To use this code for local development, install the requirements using (make sure Python version is 3.8):
@@ -9,17 +9,19 @@ pip install -r requirements.txt
 Now, you're setup!
 
 #### Usage
-To see predictions in a simple frontend UI, run: 
+To run the web interface, run: 
 ```
 # run backend
 docker run -p 8000:80 --name cls-serve hasibzunair/classification_model_serving
 # run frontend locally
 python main.py
 ```
-Drop your own images or simply use the examples.
+
+Upload your own images or simply use the examples.
 
 ### Dockerized frontend
-To build and run the Gradio application as a docker container, run:
+To containerize the frontend, we create a docker image and run 
+and the container, using:
 ```
 # build
 docker build -t frontend_serving .

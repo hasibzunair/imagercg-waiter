@@ -1,4 +1,5 @@
-# FastAPI + PyTorch Backend
+# PyTorch + FastAPI Backend
+
 Serves a dockerized deep learning image classification model using FastAPI. I used an ImageNet pretrained model that can predict 1000 different classes of general objects. See class list [here](https://deeplearning.cms.waikato.ac.nz/user-guide/class-maps/IMAGENET/).
 
 ### Local development
@@ -19,7 +20,7 @@ A FastAPI application will run on your local machine. See Swagger UI at `http://
 $ curl -X POST -F image=@test1.jpeg "http://127.0.0.1:8000/api/predict"
 ```
 
-Using the `test1.jpeg` image, the JSON response result should look like this, with labels and the probability values for the given image:
+Using the `test1.jpeg` image, the `JSON` response result should look like this, with labels and the probability values for the given image:
 ```json
 {
   "success": true, 
@@ -49,7 +50,7 @@ Using the `test1.jpeg` image, the JSON response result should look like this, wi
 }
 ```
 
-Or, submit a request using Python script:
+Or, submit a request using a Python script:
 ```python
 python request.py
 ```
@@ -69,7 +70,8 @@ $ curl -X POST -F image=@YOUR_IMG_PATH "http://127.0.0.1:8000/api/predict"
 
 ### Dockerized backend
 
-To build and run the FastAPI application as a docker container, run:
+To containerize the backend, we create a docker image and run 
+and instance of the image (a container), using:
 ```
 # build
 docker build -t classification_model_serving .
@@ -77,7 +79,7 @@ docker build -t classification_model_serving .
 docker run -p 8000:80 --name cls-serve classification_model_serving
 ```
 
-Now, the model is deployed as an API endpoint in your local machine. Finally, run `curl -X POST -F image=@test1.jpeg "http://0.0.0.0:8000/api/predict"` in your terminal. You should get the same JSON response as above.
+Now, the model is deployed as an API endpoint in your local machine using docker. Finally, run `curl -X POST -F image=@test1.jpeg "http://0.0.0.0:8000/api/predict"` in your terminal. You should get the same JSON response as above.
 
 #### Test image from Docker Hub
 ```
@@ -88,4 +90,5 @@ docker push hasibzunair/classification_model_serving
 # run backend from hub
 docker run -p 8000:80 --name cls-serve hasibzunair/classification_model_serving
 ```
-Should be able to run `curl -X POST -F image=@test1.jpeg "http://0.0.0.0:8000/api/predict"` and get predictions.
+
+Again, you should be able to run `curl -X POST -F image=@test1.jpeg "http://0.0.0.0:8000/api/predict"` and get predictions.

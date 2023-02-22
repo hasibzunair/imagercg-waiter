@@ -11,11 +11,11 @@ This application deploys a deep learning image classification model as an API en
 
 
 ### Usage
-To launch the app, run:
+To launch the application, run:
 ```
 sh deploy_app.sh
 ```
-The app is live in `http://0.0.0.0:7860`. Drop your images to make a prediction, or simply use the examples! For details on how the `frontend` and `backend` components were built, see respective folders. 
+The app is live in `http://0.0.0.0:7860`. Upload images to make a prediction, or simply use the examples! For details on how the `frontend` and `backend` components were built, see respective folders. 
 
 ### Note
 I did this small project after completing [Docker for the Absolute Beginner - Hands On - DevOps](https://www.udemy.com/course/learn-docker/).
