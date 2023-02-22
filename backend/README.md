@@ -5,6 +5,8 @@ Serves a dockerized deep learning image classification model using FastAPI. I us
 ### Local development
 To use this code for local development, install the requirements using (make sure Python version is 3.8):
 ```bash
+git clone https://github.com/hasibzunair/imagercg-waiter
+cd imagercg-waiter/backend
 pip install -r requirements.txt
 ```
 Now, you're setup!
@@ -17,7 +19,7 @@ python main.py
 
 A FastAPI application will run on your local machine. See Swagger UI at `http://127.0.0.1:8000/docs` for more info. To interact with it, open a new terminal and just send a curl request like this:
 ```bash
-$ curl -X POST -F image=@test1.jpeg "http://127.0.0.1:8000/api/predict"
+curl -X POST -F image=@test1.jpeg "http://127.0.0.1:8000/api/predict"
 ```
 
 Using the `test1.jpeg` image, the `JSON` response result should look like this, with labels and the probability values for the given image:
@@ -65,7 +67,7 @@ The result should look like this:
 
 To try it with any of your own images(`*.jpg`,`*.jpeg`,`*.png`), set path to your image `YOUR_IMG_PATH` and run:
 ```bash
-$ curl -X POST -F image=@YOUR_IMG_PATH "http://127.0.0.1:8000/api/predict"
+curl -X POST -F image=@YOUR_IMG_PATH "http://127.0.0.1:8000/api/predict"
 ```
 
 ### Dockerized backend
@@ -81,7 +83,7 @@ docker run -p 8000:80 --name cls-serve classification_model_serving
 
 Now, the model is deployed as an API endpoint in your local machine using docker. Finally, run `curl -X POST -F image=@test1.jpeg "http://0.0.0.0:8000/api/predict"` in your terminal. You should get the same JSON response as above.
 
-#### Test image from Docker Hub
+#### Push to and test image from Docker Hub
 ```
 # tag
 docker tag classification_model_serving hasibzunair/classification_model_serving
@@ -91,4 +93,4 @@ docker push hasibzunair/classification_model_serving
 docker run -p 8000:80 --name cls-serve hasibzunair/classification_model_serving
 ```
 
-Again, you should be able to run `curl -X POST -F image=@test1.jpeg "http://0.0.0.0:8000/api/predict"` and get predictions.
+Again, you should be able to run `curl -X POST -F image=@test1.jpeg "http://0.0.0.0:8000/api/predict"` and get the same JSON format predictions.
