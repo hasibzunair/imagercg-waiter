@@ -15,8 +15,10 @@ It demonstrates use-cases of different tools such as `PyTorch`, `FastAPI`, `Grad
 ### Usage
 To launch the application, run:
 ```
+# run backend and frontend docker containers
 sh deploy_app.sh
 ```
+
 The app is live in `http://0.0.0.0:7860`. Upload images to make a prediction, or simply use the examples! For details on how the `frontend` and `backend` components were built, see respective folders. 
 
 ### Note
