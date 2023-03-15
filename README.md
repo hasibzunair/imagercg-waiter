@@ -4,7 +4,7 @@ This application *serves* a deep learning image classification model that recogn
 
 It demonstrates use-cases of different tools such as `PyTorch`, `FastAPI`, `Gradio` and `Docker`.
 
-A detailed writeup is published in [Towards AI](https://medium.com/towards-artificial-intelligence/build-and-deploy-custom-docker-images-for-object-recognition-d0d127b2603b)!
+***A detailed writeup is published in [Towards AI](https://medium.com/towards-artificial-intelligence/build-and-deploy-custom-docker-images-for-object-recognition-d0d127b2603b)!***
 
 <p align="left">
   <a href="#"><img src="./frontend/test1.jpeg" width="200"></a> <br />
